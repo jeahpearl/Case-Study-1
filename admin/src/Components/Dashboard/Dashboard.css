@@ -1,0 +1,79 @@
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.dashboard-title {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.charts-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.chart, .summary-panel {
+    flex: 1 1 100%; /* Full width on smaller screens */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    text-align: center;
+}
+
+.summary-panel {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    order: 3; /* Keeps the summary at the bottom */
+    width: 100%; /* Adjust width to match the container */
+    display: flex;
+    flex-direction: column; /* Aligns items vertically */
+}
+
+.summary-item {
+    margin: 5px 0; /* Adds space between summary items */
+    font-size: 16px; /* Larger font for better readability */
+}
+
+@media (min-width: 800px) {
+    .chart {
+        flex: 1 1 48%; /* Adjusting for two charts side by side */
+    }
+    .summary-panel {
+        flex: 1 1 96%; /* Nearly full width, but aligned with charts */
+        order: 3; /* Ensures it's placed below the charts */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center-aligns the summary content */
+    }
+}
+
+@media (min-width: 1024px) {
+    .chart {
+        flex: 1 1 45%; /* Slightly smaller to maintain padding */
+    }
+    .summary-panel {
+        flex: 1 1 90%; /* Adjusting width for better alignment */
+    }
+}
+
+@media (min-width: 1280px) {
+    .charts-container {
+        justify-content: space-between; /* More spacing between components */
+    }
+    .chart {
+        flex: 1 1 40%; /* Optimized width for larger screens */
+    }
+    .summary-panel {
+        flex: 1 1 80%; /* Matching the total width of the two charts */
+    }
+}
